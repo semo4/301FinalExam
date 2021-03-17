@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="head">
+            <h1>Covid19 Statistics </h1>
+            <p>A Web Site to provide you with all update on covid-19</p>
+        </div>
+        <div class="list">
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/countries">All Countries</a></li>
+                    <li><a href="/my-record">My Records </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="cont">
+        <div class="status">
+            <h1>World Total Statistics</h1>
+            <div class="sub">
+                <div class="record">TotalConfirmed <%= data.TotalConfirmed%>
+                </div>
+                <div class="record">TotalDeaths <%= data.TotalDeaths%>
+                </div>
+                <div class="record">TotalRecovered <%= data.TotalRecovered%>
+                </div>
+            </div>
+
+        </div>
+        <div class="form">
+            <h1> GEt statistics for specific country</h1>
+            
+            <form action="/getCountryResult" method="POST">
+                <input type="text" name="country">
+                <input type="date" name="first">
+                <input type="date" name="last">
+                <input type="submit" value="Search" name="search">
+            </form>
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>

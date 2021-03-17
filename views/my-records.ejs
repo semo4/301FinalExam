@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="head">
+            <h1>Covid19 Statistics </h1>
+            <p>A Web Site to provide you with all update on covid-19</p>
+        </div>
+        <div class="list">
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/countries">All Countries</a></li>
+                    <li><a href="/my-record">My Records </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="cont">
+        <% if (total===0) { %>
+            <h1>there is no records</h1>
+            <% }else{%>
+                <% data.forEach(element=> { %>
+                    <div class="country">
+                        <h1>Country: <%= element.country%>
+                        </h1>
+                        <p>Date: <%= element.date%>
+                        </p>
+
+                        <form action="/my-record/<%= element.id%>" method="GET">
+
+                            <input type="submit" value="Details">
+                        </form>
+
+                    </div>
+                <% }) %>
+            <%} %>
+
+
+
+
+    </div>
+
+
+</body>
+
+</html>

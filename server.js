@@ -15,8 +15,8 @@ app.use(methodOverride('_method'));
 app.set('view engine','ejs');
 app.use(express.static('public'));
 app.use(express.urlencoded({extended: true}));
-const client = new pg.Client(process.env.DATABASE_URL);   // on your machine
-// const client = new pg.Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } }); // for heroku
+// const client = new pg.Client(process.env.DATABASE_URL);   // on your machine
+const client = new pg.Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } }); // for heroku
 const PORT = process.env.PORT;
 
 app.get('/', handleHome);
